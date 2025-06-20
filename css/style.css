@@ -130,10 +130,25 @@ footer p {
     font-size: 1.1rem;
 }
 
-.social-links a::before {
+.social-links a i {
     font-size: 1.2rem;
-    line-height: 1;
     margin-right: 0.5rem;
+}
+
+.social-links a[href*="twitch"] i {
+    color: #6441a5;
+}
+
+.social-links a[href*="youtube"] i {
+    color: #ff0000;
+}
+
+.social-links a[href*="twitter"] i {
+    color: #1da1f2;
+}
+
+.social-links a[href*="github"] i {
+    color: #333;
 }
 
 .social-links a[href*="twitch"]::before {
