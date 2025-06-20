@@ -127,6 +127,13 @@ footer p {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.social-links a::before {
+    font-size: 1.2rem;
+    line-height: 1;
+    margin-right: 0.5rem;
 }
 
 .social-links a[href*="twitch"]::before {
