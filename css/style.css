@@ -105,7 +105,6 @@ footer {
 }
 
 .social-link {
-    color: var(--color-body);
     text-decoration: none;
     font-size: 1.1rem;
     display: inline-flex;
@@ -114,6 +113,22 @@ footer {
     padding: 0.5rem 1rem;
     border-radius: 4px;
     transition: all 0.2s ease;
+}
+
+.social-link.twitch {
+    color: #6441a5;
+}
+
+.social-link.youtube {
+    color: #ff0000;
+}
+
+.social-link.twitter {
+    color: #1da1f2;
+}
+
+.social-link.github {
+    color: #333;
 }
 
 .social-link:hover {
@@ -125,7 +140,6 @@ footer {
 .social-link svg {
     width: 1.2rem;
     height: 1.2rem;
-    margin-right: 0.5rem;
     flex-shrink: 0;
 }
 
