@@ -83,6 +83,8 @@ footer {
     background-color: var(--color-footer-header);
     padding: 2rem 1rem;
     text-align: center;
+    position: relative;
+    margin-top: 4rem;
 }
 
 .footer-content {
@@ -106,6 +108,9 @@ footer {
     color: var(--color-body);
     text-decoration: none;
     font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     transition: all 0.2s ease;
@@ -115,6 +120,13 @@ footer {
     color: white;
     background-color: var(--color-links);
     transform: translateY(-1px);
+}
+
+.social-link svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.5rem;
+    flex-shrink: 0;
 }
 
 .social-link.twitch {
