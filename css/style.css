@@ -1,0 +1,190 @@
+/* || CSS Reset || */
+/* Intuitive box.sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  /*  Add accessible line-height */
+  line-height: 1.5;
+  /*  Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+/* Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/* Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+/* Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/* Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+/* Create a root stacking context */
+#root, #__next {
+  isolation: isolate;
+}
+
+
+
+/* || VARIABLES || */
+:root {
+  /* FONTS */
+    --font-family: "Merriweather", serif;
+    --font-family-headings: "Caprasimo", serif;
+  /* COLORS */
+    --color-background: #e5e5e5;
+    --color-body: #141414;
+    --color-headings: #ef44a2; 
+    --color-links: #9525c1;
+    --color-footer-header: purple;
+}
+
+
+/* || GENERAL STYLES || */
+
+body {
+  font-family: var(--font-family);
+  font-size: 16px;
+  color: var(--color-body);
+  background-color: var(--color-background);
+  padding: 0.5rem;
+}
+
+footer, header {
+  position: sticky;
+  background-color: var(--color-footer-header);
+}
+
+footer {
+    margin-top: 10vh;
+    z-index: 1000;
+    background-color: var(--color-footer-header);
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+footer p {
+    margin-bottom: 1rem;
+    color: var(--color-body);
+    font-size: 1.1rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-links li {
+    list-style: none;
+}
+
+.social-links a {
+    color: var(--color-body);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.social-links a:hover {
+    transform: translateY(-2px);
+    color: var(--color-links);
+}
+
+/* Add icons for social links */
+.social-links a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.social-links a[href*="twitch"]::before {
+    content: "📺"; /* TV icon */
+    color: #6441a5;
+}
+
+.social-links a[href*="youtube"]::before {
+    content: "🎥"; /* Film icon */
+    color: #ff0000;
+}
+
+.social-links a[href*="twitter"]::before {
+    content: "🐦"; /* Bird icon */
+    color: #1da1f2;
+}
+
+.social-links a[href*="github"]::before {
+    content: "💻"; /* Computer icon */
+    color: #333;
+}
+
+.social-links a::before {
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+header {
+    top: 0;
+    margin-bottom: 5vh;
+    z-index: 1000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-headings);
+  color: var(--color-headings);
+}
+
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+li a{
+    color: var(--color-links);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    float: left;
+}
