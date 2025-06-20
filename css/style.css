@@ -137,33 +137,7 @@ footer p {
     flex-shrink: 0;
 }
 
-.social-links a[href*="twitch"]::before {
-    content: "\f1e8"; /* Twitch icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    color: #6441a5;
-}
 
-.social-links a[href*="youtube"]::before {
-    content: "\f167"; /* YouTube icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    color: #ff0000;
-}
-
-.social-links a[href*="twitter"]::before {
-    content: "\f099"; /* Twitter icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    color: #1da1f2;
-}
-
-.social-links a[href*="github"]::before {
-    content: "\f09b"; /* GitHub icon */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    color: #333;
-}
 
 header {
     top: 0;
