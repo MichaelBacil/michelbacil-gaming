@@ -80,58 +80,60 @@ footer, header {
 }
 
 footer {
-    margin-top: 10vh;
-    z-index: 1000;
     background-color: var(--color-footer-header);
-    padding: 1rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    padding: 2rem 1rem;
+    text-align: center;
 }
 
-footer p {
-    margin-bottom: 1rem;
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.footer-content p {
     color: var(--color-body);
-    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
 }
 
 .social-links {
     display: flex;
-    gap: 1.5rem;
     justify-content: center;
+    gap: 1.5rem;
     flex-wrap: wrap;
 }
 
-.social-links li {
-    list-style: none;
-}
-
-.social-links a {
+.social-link {
     color: var(--color-body);
     text-decoration: none;
     font-size: 1.1rem;
-    transition: transform 0.2s ease, color 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.2s ease;
 }
 
-.social-links a:hover {
-    transform: translateY(-2px);
-    color: var(--color-links);
+.social-link:hover {
+    color: white;
+    background-color: var(--color-links);
+    transform: translateY(-1px);
 }
 
-/* Add icons for social links */
-.social-links a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.1rem;
+.social-link.twitch {
+    background-color: #6441a5;
 }
 
-.social-icon {
-    width: 1.2rem;
+.social-link.youtube {
+    background-color: #ff0000;
+}
+
+.social-link.twitter {
+    background-color: #1da1f2;
+}
+
+.social-link.github {
+    background-color: #333;
+}
+
+.social-link i {
     height: 1.2rem;
     margin-right: 0.5rem;
     flex-shrink: 0;
