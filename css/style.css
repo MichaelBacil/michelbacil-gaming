@@ -129,25 +129,29 @@ footer p {
     font-size: 1.1rem;
 }
 
-.social-links a i {
-    font-size: 1.2rem;
-    margin-right: 0.5rem;
+.social-links svg {
+    width: 1.2em;
+    height: 1.2em;
 }
 
-.social-links a[href*="twitch"] i {
-    color: #6441a5;
+.social-links svg path {
+    fill: var(--color-body);
 }
 
-.social-links a[href*="youtube"] i {
-    color: #ff0000;
+.social-links.twitch svg path {
+    fill: #6441a5;
 }
 
-.social-links a[href*="twitter"] i {
-    color: #1da1f2;
+.social-links.youtube svg path {
+    fill: #ff0000;
 }
 
-.social-links a[href*="github"] i {
-    color: #333;
+.social-links.twitter svg path {
+    fill: #1da1f2;
+}
+
+.social-links.github svg path {
+    fill: #333;
 }
 
 header {
