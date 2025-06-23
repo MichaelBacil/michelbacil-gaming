@@ -44,11 +44,24 @@ h1, h2, h3, h4, h5, h6 {
   text-wrap: balance;
 }
 /* Create a root stacking context */
-#root, #__next {
+/* #root, #__next {
   isolation: isolate;
+} */
+
+
+/* || UTILITY CLASSES || */
+.offscreen {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
-
+.clear-float {
+    clear: both;
+}
 
 /* || VARIABLES || */
 :root {
@@ -56,107 +69,45 @@ h1, h2, h3, h4, h5, h6 {
     --font-family: "Merriweather", serif;
     --font-family-headings: "Caprasimo", serif;
   /* COLORS */
-    --color-background: #e5e5e5;
+    --color-background: #e6cbe4;
     --color-body: #141414;
-    --color-headings: #ef44a2; 
-    --color-links: #9525c1;
-    --color-footer-header: purple;
+    --color-headings: #310031; 
+    --color-links: #f588c4;
+    --color-links-hover: #f588c4a8;
+    --color-footer-header: #310031;
+    --color-fonts-footer-header: #f588c4;
 }
 
 
 /* || GENERAL STYLES || */
 
 body {
+  position: relative;
   font-family: var(--font-family);
-  font-size: 16px;
+  font-size: 0.8rem;
   color: var(--color-body);
   background-color: var(--color-background);
   padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
 }
 
 footer, header {
   position: sticky;
   background-color: var(--color-footer-header);
-}
-
-footer {
-    margin-top: 10vh;
-    z-index: 1000;
-    background-color: var(--color-footer-header);
-    padding: 1rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-}
-
-footer p {
-    margin-bottom: 1rem;
-    color: var(--color-body);
-    font-size: 1.1rem;
-}
-
-.social-links {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.social-links li {
-    list-style: none;
-}
-
-.social-links a {
-    color: var(--color-body);
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: transform 0.2s ease, color 0.2s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.social-links a:hover {
-    transform: translateY(-2px);
-    color: var(--color-links);
-}
-
-.social-links a {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 1.1rem;
-}
-
-.social-links svg {
-    width: 1.2em;
-    height: 1.2em;
-}
-
-.social-links svg path {
-    fill: var(--color-body);
-}
-
-.social-links.twitch svg path {
-    fill: #6441a5;
-}
-
-.social-links.youtube svg path {
-    fill: #ff0000;
-}
-
-.social-links.twitter svg path {
-    fill: #1da1f2;
-}
-
-.social-links.github svg path {
-    fill: #333;
+  max-height: fit-content;
 }
 
 header {
     top: 0;
-    margin-bottom: 5vh;
+    margin-bottom: 3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -164,6 +115,13 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--color-headings);
 }
 
+header h1{
+    color: var(--color-fonts-footer-header);
+}
+
+footer p {
+    color: var(--color-fonts-footer-header);
+}
 
 nav {
     display: flex;
@@ -182,8 +140,98 @@ li a{
     color: var(--color-links);
 }
 
+li a:hover, li a:focus {
+    color: var(--color-links-hover);
+}
+
+li a:visited {
+    color: var(--color-links);
+}
+
+li a
+
+section {
+    margin: 1rem 0;
+    padding: 1rem;
+  }
+
+
 img {
-    max-width: 100%;
-    height: auto;
-    float: left;
+  float: left;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+footer {
+    bottom: 0;
+    margin-top: 3vh;
+    background-color: var(--color-footer-header);
+    padding: 0.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 1rem;
+}
+
+ footer p{
+    margin-bottom: 0.8rem;
+    font-size: 0.8rem;
+} 
+
+.about figure img {
+  float: left;
+}
+.footer-content, .footer-content{
+    color: var(--color-fonts-footer-header);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-links li {
+    list-style: none;
+}
+
+.social-links a {
+    color: var(--color-fonts-footer-header);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.social-links a:hover {
+    transform: translateY(-2px);
+    color: var(--color-links);
+}
+
+.social-links svg {
+    width: 1.2em;
+    height: 1.2em;
+}
+
+.social-links svg path {
+    fill: var(--color-body);
+}
+
+.social-link.twitch svg path {
+    fill: #6441a5;
+}
+
+.social-link.youtube svg path {
+    fill: #ff0000;
+}
+
+.social-link.twitter svg path {
+    fill: #1da1f2;
+}
+
+.social-link.github svg path {
+    fill: #333;
 }
